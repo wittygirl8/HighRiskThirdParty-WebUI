@@ -1,0 +1,17 @@
+$theme-colors: (
+  "primary": #e4ad2e,
+  "secondary": #cf581d,
+  "success": #22e11c,
+  "info": #50b0ff,
+  "warning": #ffbe0b,
+  "danger": #ff0000,
+  "light": #c0ccda,
+  "dark": #252525,
+);
+
+$link-color: #ffbe0b;
+$link-hover-color: #ffbe0bae;
+
+$nav-pills-link-active-bg: #e4ad2e;
+
+@import "/node_modules/bootstrap/scss/bootstrap.scss";

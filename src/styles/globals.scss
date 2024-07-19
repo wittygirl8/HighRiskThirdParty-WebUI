@@ -1,0 +1,271 @@
+@import url("react-bootstrap-table-next/dist/react-bootstrap-table2.min.css");
+@import url("react-datepicker/dist/react-datepicker.css");
+@import url("react-widgets/styles.css");
+@import url("react-range-slider-input/dist/style.css");
+
+// applies gsk theme on datepicker
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range {
+  border-radius: 0.3rem;
+  background-color: #ffbe0b;
+  color: #fff;
+}
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+// applies css to combobox
+.rw-list-option.rw-state-selected,
+.rw-state-selected.rw-list-option-create {
+  background-color: #ffbe0b;
+  border-color: #ffbe0b;
+  color: #fff;
+}
+
+// timeline css
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: " ";
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: " ";
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #595959;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+
+// chronology
+.fs-7 {
+  font-size: 0.875rem !important;
+}
+
+.bsb-chronology-8 {
+  --bsb-tl-color: var(--bs-primary-bg-subtle);
+  --bsb-tl-circle-color: var(--bs-light);
+  --bsb-tl-circle-border-color: var(--bs-primary);
+  --bsb-tl-indicator-color: var(--bs-white);
+  --bsb-tl-circle-size: 16px;
+  --bsb-tl-circle-offset: 8px;
+  --bsb-tl-circle-border-size: 2px;
+}
+
+.bsb-chronology-8 .chronology {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.bsb-chronology-8 .chronology:after {
+  background-color: #737373;
+  bottom: 0;
+  content: "";
+  left: 0;
+  margin-left: -1px;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+@media (min-width: 768px) {
+  .bsb-chronology-8 .chronology:after {
+    left: 33%;
+  }
+}
+
+.bsb-chronology-8 .chronology > .chronology-item {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.bsb-chronology-8 .chronology > .chronology-item:after {
+  background: #fff;
+  border: var(--bsb-tl-circle-border-size) solid
+    var(--bsb-tl-circle-border-color);
+  border-radius: 50%;
+  content: "";
+  height: var(--bsb-tl-circle-size);
+  left: calc(var(--bsb-tl-circle-offset) * -1);
+  position: absolute;
+  top: calc(50% - var(--bsb-tl-circle-offset));
+  width: var(--bsb-tl-circle-size);
+  z-index: 1;
+}
+
+.bsb-chronology-8 .chronology > .chronology-item .chronology-body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.bsb-chronology-8 .chronology > .chronology-item .chronology-meta {
+  padding: 0 0 1rem 2rem;
+}
+
+.bsb-chronology-8 .chronology > .chronology-item:first-child .chronology-meta {
+  padding: 2rem 0 1rem 2rem;
+}
+
+.bsb-chronology-8 .chronology > .chronology-item .chronology-content {
+  padding: 0 0 2rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .bsb-chronology-8 .chronology > .chronology-item {
+    left: 33%;
+    width: 67%;
+  }
+
+  .bsb-chronology-8 .chronology > .chronology-item .chronology-meta {
+    display: flex;
+    justify-content: flex-end;
+    left: -100%;
+    margin: 0;
+    padding: 0 2rem 0 0;
+    position: absolute;
+    top: calc(50% - 10px);
+    width: 100%;
+    z-index: 1;
+  }
+
+  .bsb-chronology-8
+    .chronology
+    > .chronology-item:first-child
+    .chronology-meta {
+    padding: 0 2rem 0 0;
+  }
+
+  .bsb-chronology-8 .chronology > .chronology-item .chronology-content {
+    padding: 2rem;
+  }
+
+  .bsb-chronology-8 .chronology > .chronology-item .chronology-indicator {
+    position: relative;
+  }
+
+  .bsb-chronology-8 .chronology > .chronology-item .chronology-indicator:after {
+    border-width: 1px;
+    border: 10px solid var(--bsb-tl-indicator-color);
+    border-color: transparent var(--bsb-tl-indicator-color) transparent
+      transparent;
+    border-left-width: 0;
+    content: "";
+    left: calc(2rem - 10px);
+    position: absolute;
+    top: calc(50% - var(--bsb-tl-circle-offset));
+    z-index: 1;
+  }
+}
+
+// remvoves scroll bars
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+:root::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+// hides label on datatable search
+#search-bar-0-label {
+  display: none;
+}
+
+.row-expansion-style {
+  background: #f9f9f9;
+}
+
+#network-graph {
+  position: relative;
+}
+
+// used for graph loads
+#loading-overlay {
+  position: absolute;
+  height: 85vh;
+  top: 20vh;
+  left: 450px;
+  bottom: 0px;
+  right: 0px;
+  background: url("../../public/spinner.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(255, 255, 255);
+  z-index: 100;
+}
+
+// customize the payment slider
+.range-slider .range-slider__range {
+  position: absolute;
+  z-index: 1;
+  transform: translate(0, -50%);
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  background: #de5716;
+}
+
+.range-slider .range-slider__thumb {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #d27445;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #252525;
+  background-color: #e9e9e99e;
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+    var(--bs-accordion-border-color);
+}
+
+.hr {
+  margin: 0;
+}
+
+.custom-card {
+  background-color: #de5716;
+  color: white; /* Ensure text is readable */
+}
