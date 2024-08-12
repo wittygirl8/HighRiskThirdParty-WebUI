@@ -1,5 +1,5 @@
 "use client";
-import GSKNavbar from "../../components/Navbar";
+import GSKNavbar from "@/components/Navbar";
 import BootstrapTable from "react-bootstrap-table-next";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
 import Row from "react-bootstrap/Row";

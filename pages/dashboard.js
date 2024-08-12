@@ -1,15 +1,15 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Stats from "../../components/Stats";
-import GSKNavbar from "../../components/Navbar";
+import Stats from "@/components/Stats";
+import GSKNavbar from "@/components/Navbar";
 import BootstrapTable from "react-bootstrap-table-next";
 import { useEffect, useState } from "react";
-import { BarChart } from "../../components/BarChart";
+import { BarChart } from "@/components/BarChart";
 import { Combobox } from "react-widgets";
-import { CenteredBarChart } from "../../components/CenteredBarChart";
-import DeepdiveModal from "../../components/DeepdiveModal";
+import { CenteredBarChart } from "@/components/CenteredBarChart";
+import DeepdiveModal from "@/components/DeepdiveModal";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
-import { getAll } from "../../utils/resources";
+import { getAll } from "@/utils/resources";
 
 const riskScoreColumns = [
   {

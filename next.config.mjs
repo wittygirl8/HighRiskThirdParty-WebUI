@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    BASE_URL: "http://localhost:3000",
-    API_URL: process.env.API_URL,
+    BASE_URL: "https://eyalp.southindia.cloudapp.azure.com",
+    API_URL: "https://eyalp.southindia.cloudapp.azure.com/hrtp-api",
   },
   trailingSlash: true,
   reactStrictMode: false,
@@ -10,6 +10,7 @@ const nextConfig = {
     config.resolve.fallback = { fs: false };
     return config;
   },
+  basePath:"/htrp"
 };
 
 export default nextConfig;
