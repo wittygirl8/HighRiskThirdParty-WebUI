@@ -24,15 +24,7 @@ function GSKNavbar() {
     <>
       <Navbar className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="/">
-            <Image
-              alt=""
-              src={logo}
-              width="125"
-              height="40"
-              className="d-inline-block align-top"
-            />
-          </Navbar.Brand>
+          <Navbar.Brand href="/">Company Logo</Navbar.Brand>
           <Nav>
             {token && <Nav.Link href="/deepdive">Deepdive</Nav.Link>}
             {token && <Nav.Link href="/dashboard">Dashboard</Nav.Link>}
