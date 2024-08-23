@@ -256,10 +256,10 @@ export default function Deepdive() {
                   <Checkbox
                     checked={isChecked}
                     onChange={(value, event) => {
-                      if (value) setConnection("weak");
+                      if (value) setConnection("multiple");
                       if (!value) setConnection(null);
                     }}
-                    label="Show additional connections"
+                    label="Show multiple connection"
                   />
                 </div>
                 <div className="p-2">
