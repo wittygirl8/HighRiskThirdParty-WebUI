@@ -28,7 +28,7 @@ export default function Deepdive() {
   });
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [allowedCountries, setAllowedCountries] = useState([]);
-  const [selectedOrgType, setOrgType] = useState("HCO");
+  const [selectedOrgType, setOrgType] = useState("HCO & HCP");
   const [searchLabel, setSearchLabel] = useState("Enter minimum 3 letters.");
   const [HCPCount, setHCPCount] = useState(0);
   const [HCOCount, setHCOCount] = useState(0);
@@ -179,7 +179,7 @@ export default function Deepdive() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 3500);
+    }, 1500);
   }, [graph]);
 
   useEffect(() => {
@@ -214,7 +214,7 @@ export default function Deepdive() {
         <Col xs={2}>
           Filter By
           <Combobox
-            defaultValue="HCO"
+            defaultValue="HCO & HCP"
             data={["HCO & HCP", "HCO", "HCP"]}
             onChange={(e) => handleOrgTypeChange(e)}
           />
