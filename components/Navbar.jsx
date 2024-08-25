@@ -8,6 +8,7 @@ import logo from "@/../../public/logo.svg";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { destroyCookie, parseCookies } from "nookies";
+import Link from "next/link";
 
 function GSKNavbar() {
   const router = useRouter();
@@ -24,18 +25,18 @@ function GSKNavbar() {
     <>
       <Navbar className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="/">
-            <Image
-              alt=""
-              src={logo}
-              width="125"
-              height="40"
-              className="d-inline-block align-top"
-            />
-          </Navbar.Brand>
+          <Navbar.Brand href="/">Company Logo</Navbar.Brand>
           <Nav>
-            {token && <Nav.Link href="/deepdive">Deepdive</Nav.Link>}
-            {token && <Nav.Link href="/dashboard">Dashboard</Nav.Link>}
+            {token && (
+              <Link href="/deepdive" className="nav-link">
+                Deepdive
+              </Link>
+            )}
+            {token && (
+              <Link href="/dashboard" className="nav-link">
+                Dasboard
+              </Link>
+            )}
             {token && <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>}
           </Nav>
         </Container>
