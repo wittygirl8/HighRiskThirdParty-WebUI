@@ -10,6 +10,6 @@ const nextConfig = {
     config.resolve.fallback = { fs: false };
     return config;
   },
-  basePath: "/hrtp",
+  basePath: "/htrp",
 };
 module.exports = nextConfig;
