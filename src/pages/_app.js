@@ -4,7 +4,7 @@ import "@/styles/gsk.scss";
 import "@/styles/globals.scss";
 import "@/../react-graph-vis/node_modules/vis-network/styles/vis-network.css";
 
-import NoSSR from "@/components/NoSSR";
+import NoSSR from "../../components/NoSSR";
 
 React.useLayoutEffect = React.useEffect;
 

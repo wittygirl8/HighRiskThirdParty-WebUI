@@ -1,8 +1,8 @@
 "use client";
-import GSKNavbar from "@/components/Navbar";
+import GSKNavbar from "../../components/Navbar";
 import Row from "react-bootstrap/Row";
 import { useRouter } from "next/router";
-import Login from "@/components/Login/Login";
+import Login from "../../components/Login/Login";
 import Col from "react-bootstrap/Col";
 import { parseCookies, setCookie, destroyCookie } from "nookies";
 

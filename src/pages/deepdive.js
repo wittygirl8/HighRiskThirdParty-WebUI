@@ -6,15 +6,15 @@ import Graph from "react-graph-vis";
 import Combobox from "react-widgets/Combobox";
 import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
-import GSKNavbar from "@/components/Navbar";
-import DeepdiveModal from "@/components/DeepdiveModal";
-import { GSKNode, options } from "@/utils/graph";
-import Summary from "@/components/Summary";
+import GSKNavbar from "../../components/Navbar";
+import DeepdiveModal from "../../components/DeepdiveModal";
+import { GSKNode, options } from "../../utils/graph";
+import Summary from "../../components/Summary";
 import Checkbox from "react-custom-checkbox";
-import PriceRangeFilter from "@/components/PriceRangeFilter";
-import Labels from "@/components/Labels";
-import { BoxPlotChart } from "@/components/BoxPlotChart";
-import { getAll } from "@/utils/resources";
+import PriceRangeFilter from "../../components/PriceRangeFilter";
+import Labels from "../../components/Labels";
+import { BoxPlotChart } from "../../components/BoxPlotChart";
+import { getAll } from "../../utils/resources";
 import { Accordion } from "react-bootstrap";
 
 export default function Deepdive() {

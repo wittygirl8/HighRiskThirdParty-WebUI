@@ -4,6 +4,7 @@ import Image from "next/image";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import logo from "@/../../public/logo.svg";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { destroyCookie, parseCookies } from "nookies";
@@ -26,7 +27,7 @@ function GSKNavbar() {
           <Navbar.Brand href="/">
             <Image
               alt=""
-              src="/hrtp/logo.svg"
+              src={logo}
               width="125"
               height="40"
               className="d-inline-block align-top"
