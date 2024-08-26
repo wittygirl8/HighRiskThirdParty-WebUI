@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    BASE_URL: "http://0.0.0.0:3000",
-    API_URL: "https://eyalp.southindia.cloudapp.azure.com/hrtp-api",
+    BASE_URL: "http://0.0.0.0:1000",
+    API_URL: "https://highriskthirdparty-backend-66af.onrender.com",
   },
   trailingSlash: true,
   reactStrictMode: false,
