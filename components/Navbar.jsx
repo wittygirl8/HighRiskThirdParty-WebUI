@@ -24,18 +24,18 @@ function GSKNavbar() {
     <>
       <Navbar className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="/">
-            <Image
-              alt=""
-              src="/hrtp/logo.svg"
-              width="125"
-              height="40"
-              className="d-inline-block align-top"
-            />
-          </Navbar.Brand>
+          <Navbar.Brand href="/">Company</Navbar.Brand>
           <Nav>
-            {token && <Link href="/deepdive" className="nav-link">Deepdive</Link>}
-            {token && <Link href="/dashboard" className="nav-link">Dashboard</Link>}
+            {token && (
+              <Link href="/deepdive" className="nav-link">
+                Deepdive
+              </Link>
+            )}
+            {token && (
+              <Link href="/dashboard" className="nav-link">
+                Dashboard
+              </Link>
+            )}
             {token && <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>}
           </Nav>
         </Container>

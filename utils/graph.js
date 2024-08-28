@@ -6,12 +6,13 @@ const GSKNode = {
     x: true,
     y: true,
   },
-  label: "GSK",
-  title: "GSK",
+  label: "Company",
+  title: "Company",
   color: "#fdfd00",
-  size: 250,
+  size: 100,
   shape: "image",
-  image: "https://www.mxp-webshop.de/media/image/20/82/24/GSK-Logo.png",
+  image:
+    "https://dieselpunkcore.com/wp-content/uploads/2014/06/logo-placeholder.png%22",
 };
 
 const options = {
