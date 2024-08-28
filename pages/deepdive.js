@@ -28,7 +28,7 @@ export default function Deepdive() {
   });
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [allowedCountries, setAllowedCountries] = useState([]);
-  const [selectedOrgType, setOrgType] = useState("HCO");
+  const [selectedOrgType, setOrgType] = useState("HCO & HCP");
   const [searchLabel, setSearchLabel] = useState("Enter minimum 3 letters.");
   const [HCPCount, setHCPCount] = useState(0);
   const [HCOCount, setHCOCount] = useState(0);
