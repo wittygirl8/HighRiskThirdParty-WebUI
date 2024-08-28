@@ -214,7 +214,7 @@ export default function Deepdive() {
         <Col xs={2}>
           Filter By
           <Combobox
-            defaultValue="HCO"
+            defaultValue="HCO & HCP"
             data={["HCO & HCP", "HCO", "HCP"]}
             onChange={(e) => handleOrgTypeChange(e)}
           />

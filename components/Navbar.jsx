@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { destroyCookie, parseCookies } from "nookies";
+import Link from "next/link";
 
 function GSKNavbar() {
   const router = useRouter();
@@ -33,8 +34,8 @@ function GSKNavbar() {
             />
           </Navbar.Brand>
           <Nav>
-            {token && <Nav.Link href="/deepdive">Deepdive</Nav.Link>}
-            {token && <Nav.Link href="/dashboard">Dashboard</Nav.Link>}
+            {token && <Link href="/deepdive" className="nav-link">Deepdive</Link>}
+            {token && <Link href="/dashboard" className="nav-link">Dashboard</Link>}
             {token && <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>}
           </Nav>
         </Container>

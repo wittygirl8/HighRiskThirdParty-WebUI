@@ -5,7 +5,7 @@ const baseUrl = process.env.API_URL;
 const { token } = parseCookies(null, "token");
 
 const getAll = (uri) => {
-  return axios.get(`${baseUrl}${uri}`, {
+  return axios.get(`${baseUrl}/${uri}`, {
     headers: {
       Authorization: `Bearer ${token}`,
       "Access-Control-Allow-Origin": process.env.BASE_URL,
