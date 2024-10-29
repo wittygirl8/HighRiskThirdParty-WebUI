@@ -30,18 +30,6 @@ export const options = {
   },
 };
 
-export const data = {
-  labels: [],
-  datasets: [
-    {
-      label: "",
-      data: [],
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-    },
-  ],
-};
-
-export function LineChart() {
-  return <Line options={options} data={data} />;
+export function LineChart({data}) {
+  return <Line options={options} data={data.data} />;
 }

@@ -21,6 +21,7 @@ function DeepdiveModal({ show, nodeSelected, handleClose }) {
   const [overviewData, setOveriewData] = useState({});
   const [eventTimelineData, setEventTimelineData] = useState([]);
   const [chronologyData, setChronologyData] = useState([]);
+  const [financialData, setFinancialData] = useState([]);
   const [subGraph, setSubGraph] = useState({
     nodes: [],
     edges: [],
@@ -70,6 +71,14 @@ function DeepdiveModal({ show, nodeSelected, handleClose }) {
         })
         .catch((error) => {
           console.error("Error:", error);
+        });
+      // financial data
+      getAll(`api/v1/deepdive/finance?id=${nodeSelected}`)
+        .then((res) => {
+          setFinancialData(res.data.data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
         });
     }
   }, [nodeSelected]);
@@ -156,7 +165,7 @@ function DeepdiveModal({ show, nodeSelected, handleClose }) {
               <Tab eventKey="financials" title="Financials">
                 <Row>
                   <Col>
-                    <Financials />
+                    <Financials financialData={financialData} />
                   </Col>
                 </Row>
               </Tab>
