@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import { useRouter } from "next/router";
 import Login from "../../components/Login/Login";
 import Col from "react-bootstrap/Col";
-import { parseCookies, setCookie, destroyCookie } from "nookies";
+import { setCookie } from "nookies";
 
 export default function Home() {
   const router = useRouter();
@@ -24,7 +24,7 @@ export default function Home() {
         <Col className="pt-5">
           <Login onLogin={loginHandler} router={router} />
         </Col>
-        <Col>v1.1.0</Col>
+        <Col>v2.0.0</Col>
       </Row>
     </>
   );

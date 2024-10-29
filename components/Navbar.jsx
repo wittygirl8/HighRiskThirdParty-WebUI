@@ -1,12 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import logo from "@/../../public/logo.svg";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import { destroyCookie, parseCookies } from "nookies";
 import Link from "next/link";
 
@@ -32,11 +29,11 @@ function GSKNavbar() {
                 Deepdive
               </Link>
             )}
-            {token && (
+            {/* {token && (
               <Link href="/dashboard" className="nav-link">
                 Dasboard
               </Link>
-            )}
+            )} */}
             {token && <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>}
           </Nav>
         </Container>

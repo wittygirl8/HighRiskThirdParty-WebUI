@@ -12,8 +12,6 @@ import { GSKNode, options } from "../../utils/graph";
 import Summary from "../../components/Summary";
 import Checkbox from "react-custom-checkbox";
 import PriceRangeFilter from "../../components/PriceRangeFilter";
-import Labels from "../../components/Labels";
-import { BoxPlotChart } from "../../components/BoxPlotChart";
 import { getAll } from "../../utils/resources";
 import { Accordion } from "react-bootstrap";
 
@@ -28,7 +26,7 @@ export default function Deepdive() {
   });
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [allowedCountries, setAllowedCountries] = useState([]);
-  const [selectedOrgType, setOrgType] = useState("HCO & HCP");
+  const [selectedOrgType, setOrgType] = useState("Suppliers & Individual");
   const [searchLabel, setSearchLabel] = useState("Enter minimum 3 letters.");
   const [HCPCount, setHCPCount] = useState(0);
   const [HCOCount, setHCOCount] = useState(0);
@@ -60,15 +58,16 @@ export default function Deepdive() {
   };
 
   const countryMap = {
+    Saudi: "saudi",
     Spain: "spain",
     Brazil: "brazil",
     "United States of America": "usa",
   };
 
   const orgMap = {
-    HCO: "hco",
-    HCP: "hcp",
-    "HCO & HCP": "both",
+    Suppliers: "hco",
+    Individual: "hcp",
+    "Suppliers & Individual": "both",
   };
 
   const countSummaryStats = (graph) => {
@@ -206,7 +205,6 @@ export default function Deepdive() {
         <Col xs={4}>
           Select By Country
           <Combobox
-            defaultValue={allowedCountries[0]}
             data={allowedCountries}
             onChange={(e) => handleCountryChange(e)}
           />
@@ -214,9 +212,10 @@ export default function Deepdive() {
         <Col xs={2}>
           Filter By
           <Combobox
-            defaultValue="HCO & HCP"
-            data={["HCO & HCP", "HCO", "HCP"]}
+            defaultValue="Suppliers & Individual"
+            data={["Suppliers & Individual", "Suppliers", "Individual"]}
             onChange={(e) => handleOrgTypeChange(e)}
+            disabled={["Suppliers", "Individual"]}
           />
         </Col>
         <Col xs={6}>

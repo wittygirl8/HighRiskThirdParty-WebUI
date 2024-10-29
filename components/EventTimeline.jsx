@@ -1,23 +1,27 @@
 "use client";
 
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import Combobox from "react-widgets/Combobox";
 import { useEffect, useState } from "react";
 
 const checkForLink = (str) => {
-  const allowedHosts = ['news.google.com'];
- 
+  const allowedHosts = ["news.google.com"];
+
   if (!str) {
     return "";
   }
- 
+
   try {
     const url = new URL(str);
     const host = url.host;
     const truncatedStr = str.length > 60 ? `${str.substring(0, 57)}...` : str;
- 
+
     if (allowedHosts.includes(host)) {
-      return <a href={str} target="_blank" rel="noopener noreferrer">{truncatedStr}</a>;
+      return (
+        <a href={str} target="_blank" rel="noopener noreferrer">
+          {truncatedStr}
+        </a>
+      );
     } else {
       return truncatedStr;
     }
@@ -40,6 +44,11 @@ export default function EventTimeline({ eventTimelineData }) {
     negative: "danger",
   };
 
+  const entityMap = {
+    Suppliers: "HCO",
+    Individual: "HCP",
+  };
+
   useEffect(() => {
     setFilteredTimelineData(eventTimelineData);
     setTimelineData(eventTimelineData);
@@ -59,7 +68,7 @@ export default function EventTimeline({ eventTimelineData }) {
         if (!entity) {
           return true;
         } else {
-          return data.flag === entity;
+          return data.flag === entityMap[entity];
         }
       })
       .filter((obj) => {
@@ -90,7 +99,7 @@ export default function EventTimeline({ eventTimelineData }) {
               <div className="pt-2">
                 Entity
                 <Combobox
-                  data={["HCO", "HCP"]}
+                  data={["Suppliers", "Individual"]}
                   onChange={(_) => setEntity(_)}
                 />
               </div>
@@ -100,6 +109,11 @@ export default function EventTimeline({ eventTimelineData }) {
                   data={["Positive", "Neutral", "Negative"]}
                   onChange={(_) => setEmotion(_)}
                 />
+              </div>
+              <div className="pt-5">
+                <Button variant="primary" target="_blank" href="#">
+                  Advance Search Analytics
+                </Button>
               </div>
             </div>
           </div>

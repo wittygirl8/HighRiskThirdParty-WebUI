@@ -12,6 +12,7 @@ export default function PriceRangeFilter({
   value,
 }) {
   const currencyMap = {
+    Saudi: "﷼",
     Spain: "€",
     Brazil: "R$",
     "United States of America": "$",
@@ -19,7 +20,7 @@ export default function PriceRangeFilter({
   };
   return (
     <div className="mb-5 mx-5 mt-0">
-      Payment range
+      Value range
       {selectedCountry ? (
         <div className="d-flex justify-content-between">
           <div className="p-2">{`${

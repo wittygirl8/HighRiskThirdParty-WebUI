@@ -152,6 +152,8 @@ function DeepdiveModal({ show, nodeSelected, handleClose }) {
                   </Col>
                 </Row>
               </Tab>
+              <Tab eventKey="financials" title="Financials"></Tab>
+              <Tab eventKey="sanctions" title="Sanctions" disabled></Tab>
             </Tabs>
           </Modal.Body>
           <Modal.Footer>
