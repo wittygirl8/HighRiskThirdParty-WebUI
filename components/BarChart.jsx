@@ -1,5 +1,3 @@
-
-import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -20,48 +18,6 @@ ChartJS.register(
   Legend
 );
 
-// export const options = {
-//   indexAxis: "x",
-//   elements: {
-//     bar: {
-//       borderWidth: 2,
-//     },
-//   },
-//   scales: {
-//     y: {
-//       grid: {
-//         display: false,
-//       },
-//       ticks: {
-//         display: false,
-//       },
-//       display: true,
-//     },
-//     x: {
-//       grid: {
-//         display: false,
-//       },
-//       ticks: {
-//         display: false,
-//       },
-//       display: true,
-//     },
-//   },
-//   responsive: true,
-//   plugins: {
-//     legend: {
-//       display: false,
-//     },
-//     title: {
-//       display: false,
-//     },
-//   },
-// };
-
-// export function BarChart({ connectionsChartData }) {
-//   return <Bar options={options} data={connectionsChartData} />;
-// }
-
 export const options = {
   indexAxis: "x",
   elements: {
@@ -79,10 +35,10 @@ export const options = {
       },
       display: true,
       title: {
-            display: true,
-            text: 'Number of HCOs',
-            font: {weight: 'bold'}
-         },
+        display: true,
+        text: "Number of HCOs",
+        font: { weight: "bold" },
+      },
     },
     x: {
       grid: {
@@ -93,10 +49,10 @@ export const options = {
       },
       display: true,
       title: {
-            display: true,
-            text: 'Connection Strength',
-            font: {weight: 'bold'}
-         },
+        display: true,
+        text: "Connection Strength",
+        font: { weight: "bold" },
+      },
     },
   },
   responsive: true,

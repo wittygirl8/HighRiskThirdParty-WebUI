@@ -12,6 +12,7 @@ import Graph from "react-graph-vis";
 import Chronology from "./Chronology";
 import { options } from "../utils/subGraph";
 import { getAll } from "../utils/resources";
+import Financials from "./Financials";
 
 function DeepdiveModal({ show, nodeSelected, handleClose }) {
   const [selectedNode, setSelectedNode] = useState();
@@ -152,7 +153,13 @@ function DeepdiveModal({ show, nodeSelected, handleClose }) {
                   </Col>
                 </Row>
               </Tab>
-              <Tab eventKey="financials" title="Financials"></Tab>
+              <Tab eventKey="financials" title="Financials">
+                <Row>
+                  <Col>
+                    <Financials />
+                  </Col>
+                </Row>
+              </Tab>
               <Tab eventKey="sanctions" title="Sanctions" disabled></Tab>
             </Tabs>
           </Modal.Body>
