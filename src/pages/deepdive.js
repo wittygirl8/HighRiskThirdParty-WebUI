@@ -58,7 +58,7 @@ export default function Deepdive() {
   };
 
   const countryMap = {
-    Saudi: "saudi",
+    "Saudi Arabia": "saudi",
     Spain: "spain",
     Brazil: "brazil",
     "United States of America": "usa",

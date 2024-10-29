@@ -1,10 +1,17 @@
-import { Col, Row } from 'react-bootstrap';
-import { LineChart } from './LineChart';
+import { Col, Row } from "react-bootstrap";
+import { LineChart } from "./LineChart";
+import { useEffect, useState } from "react";
 
 export default function Financials({ financialData }) {
+  const [financialChartData, setFinancialChartData] = useState(financialData);
   const groupedData = [];
-  for (let i = 0; i < financialData.length; i += 2) {
-    groupedData.push(financialData.slice(i, i + 2));
+
+  useEffect(() => {
+    setFinancialChartData(financialData);
+  }, []);
+
+  for (let i = 0; i < financialChartData.length; i += 2) {
+    groupedData.push(financialChartData.slice(i, i + 2));
   }
 
   return (

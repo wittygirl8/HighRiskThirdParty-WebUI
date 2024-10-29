@@ -12,12 +12,13 @@ export default function PriceRangeFilter({
   value,
 }) {
   const currencyMap = {
-    Saudi: "﷼",
+    "Saudi Arabia": "﷼",
     Spain: "€",
     Brazil: "R$",
     "United States of America": "$",
     "": "$",
   };
+
   return (
     <div className="mb-5 mx-5 mt-0">
       Value range
