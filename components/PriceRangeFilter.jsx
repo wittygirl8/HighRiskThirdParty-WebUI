@@ -26,10 +26,10 @@ export default function PriceRangeFilter({
         <div className="d-flex justify-content-between">
           <div className="p-2">{`${
             currencyMap[selectedCountry]
-          } ${min.toLocaleString()}`}</div>
+          } ${min.toLocaleString("en-GB")}`}</div>
           <div className="p-2">{`${
             currencyMap[selectedCountry]
-          } ${max.toLocaleString()}`}</div>
+          } ${max.toLocaleString("en-GB")}`}</div>
         </div>
       ) : (
         <div className="p-2"></div>
@@ -40,9 +40,9 @@ export default function PriceRangeFilter({
       ) : (
         <div className="mt-3">{`Selected from ${
           currencyMap[selectedCountry]
-        } ${value[0].toLocaleString()} to ${
+        } ${value[0].toLocaleString("en-GB")} to ${
           currencyMap[selectedCountry]
-        } ${value[1].toLocaleString()}`}</div>
+        } ${value[1].toLocaleString("en-GB")}`}</div>
       )}
       <div className="d-flex flex-row-reverse mt-2">
         <Button variant="primary" onClick={(e) => handlePriceRangeChange(e)}>
