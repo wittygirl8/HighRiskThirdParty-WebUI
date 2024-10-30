@@ -78,7 +78,7 @@ function DeepdiveModal({ show, nodeSelected, handleClose }) {
           setFinancialData(res.data.data);
         })
         .catch((error) => {
-          console.error('Error:', error);
+          console.error("Error:", error);
         });
     }
   }, [nodeSelected]);
@@ -112,6 +112,14 @@ function DeepdiveModal({ show, nodeSelected, handleClose }) {
       getAll(`api/v1/deepdive/timeline?id=${selectedNode}`)
         .then((res) => {
           setChronologyData(res.data.data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+      // financial data
+      getAll(`api/v1/deepdive/finance?id=${nodeSelected}`)
+        .then((res) => {
+          setFinancialData(res.data.data);
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -155,13 +163,6 @@ function DeepdiveModal({ show, nodeSelected, handleClose }) {
                   </Col>
                 </Row>
               </Tab>
-              <Tab eventKey="timeline" title="Timeline">
-                <Row>
-                  <Col>
-                    <Chronology chronologyData={chronologyData} />
-                  </Col>
-                </Row>
-              </Tab>
               <Tab eventKey="financials" title="Financials">
                 <Row>
                   <Col>
@@ -170,6 +171,13 @@ function DeepdiveModal({ show, nodeSelected, handleClose }) {
                 </Row>
               </Tab>
               <Tab eventKey="sanctions" title="Sanctions" disabled></Tab>
+              <Tab eventKey="timeline" title="Timeline">
+                <Row>
+                  <Col>
+                    <Chronology chronologyData={chronologyData} />
+                  </Col>
+                </Row>
+              </Tab>
             </Tabs>
           </Modal.Body>
           <Modal.Footer>

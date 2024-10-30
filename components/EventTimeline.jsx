@@ -5,7 +5,7 @@ import Combobox from "react-widgets/Combobox";
 import { useEffect, useState } from "react";
 
 const checkForLink = (str) => {
-  const allowedHosts = ["news.google.com"];
+  const allowedHosts = [""];
 
   if (!str) {
     return "";
@@ -16,7 +16,8 @@ const checkForLink = (str) => {
     const host = url.host;
     const truncatedStr = str.length > 60 ? `${str.substring(0, 57)}...` : str;
 
-    if (allowedHosts.includes(host)) {
+    // flipped condition to include every link
+    if (!allowedHosts.includes(host)) {
       return (
         <a href={str} target="_blank" rel="noopener noreferrer">
           {truncatedStr}
@@ -47,6 +48,11 @@ export default function EventTimeline({ eventTimelineData }) {
   const entityMap = {
     Suppliers: "HCO",
     Individual: "HCP",
+  };
+
+  const inverseEntityMap = {
+    HCO: "Suppliers",
+    HCP: "Individual",
   };
 
   useEffect(() => {
@@ -111,7 +117,11 @@ export default function EventTimeline({ eventTimelineData }) {
                 />
               </div>
               <div className="pt-5">
-                <Button variant="primary" target="_blank" href="#">
+                <Button
+                  variant="primary"
+                  target="_blank"
+                  href="https://news-screening-tool.netlify.app/"
+                >
                   Advance Search Analytics
                 </Button>
               </div>
@@ -136,7 +146,8 @@ export default function EventTimeline({ eventTimelineData }) {
                           emotionMap[data.sentiment.toLowerCase()]
                         }`}
                       >
-                        {data.category} | {data.flag} | {data.sentiment}
+                        {data.category} | {inverseEntityMap[data.flag]} |{" "}
+                        {data.sentiment}
                         {data.hcp ? ` - ${data.hcp}` : ` - ${data.hco}`}
                       </span>
                       <p className="fst-italic float-end">{data.date}</p>

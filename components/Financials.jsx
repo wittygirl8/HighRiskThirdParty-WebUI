@@ -8,7 +8,7 @@ export default function Financials({ financialData }) {
 
   useEffect(() => {
     setFinancialChartData(financialData);
-  }, []);
+  }, [financialData]);
 
   for (let i = 0; i < financialChartData.length; i += 2) {
     groupedData.push(financialChartData.slice(i, i + 2));

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 
 const CATEGORIES = [
@@ -15,19 +15,23 @@ const CATEGORIES = [
 ];
 
 const checkForLink = (str) => {
-  const allowedHosts = ['news.google.com'];
- 
+  const allowedHosts = [""];
+
   if (!str) {
     return "";
   }
- 
+
   try {
     const url = new URL(str);
     const host = url.host;
     const truncatedStr = str.length > 60 ? `${str.substring(0, 57)}...` : str;
- 
-    if (allowedHosts.includes(host)) {
-      return <a href={str} target="_blank" rel="noopener noreferrer">{truncatedStr}</a>;
+
+    if (!allowedHosts.includes(host)) {
+      return (
+        <a href={str} target="_blank" rel="noopener noreferrer">
+          {truncatedStr}
+        </a>
+      );
     } else {
       return truncatedStr;
     }
